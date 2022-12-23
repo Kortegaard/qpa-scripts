@@ -30,7 +30,7 @@ BoundaryAlgebra := function(k, n)
     getX := function(num) return GeneratorsOfAlgebra(kQ)[n+num*2+1]; end;
     getY := function(num) return GeneratorsOfAlgebra(kQ)[n+num*2+2]; end;
 
-    # Generate
+    # Generate ideal
     for i in  [1..n] do
         Append(ideal,[getX(i-1)*getY(i-1) - getY(\mod(i-2,n))*getX(\mod(i-2,n))]);
 
