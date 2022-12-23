@@ -32,7 +32,7 @@ BoundaryAlgebra := function(k, n)
 
     # Generate
     for i in  [1..n] do
-        Append(ideal,[getX(i-1)*getY(i-1)]);
+        Append(ideal,[getX(i-1)*getY(i-1) - getY(\mod(i-2,n))*getX(\mod(i-2,n))]);
 
         temp  := getX(\mod(i,n));
         temp2 := getY(\mod(i-1,n));
@@ -40,6 +40,7 @@ BoundaryAlgebra := function(k, n)
         for j in  [1..n-k-1] do temp2 := temp2 * getY(\mod(i-j-1,n)); od;
         Append(ideal,[temp - temp2]);
     od;
+
 
     I := Ideal(kQ, ideal);
     A := kQ/I;
