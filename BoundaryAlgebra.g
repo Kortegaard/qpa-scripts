@@ -43,8 +43,6 @@ BoundaryAlgebra := function(k, n)
 
     I := Ideal(kQ, ideal);
     A := kQ/I;
-    Display(Q);
-    Display(ideal);
     return A;
 end;
 
